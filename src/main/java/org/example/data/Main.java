@@ -4,38 +4,40 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
-
-        /* V. Comparison   */
-
         Scanner scanner = new Scanner(System.in);
 
-        int A, B;
+        // Declare variables
+        long A, B, C;
 
-        char C;
+        // Read inputs A, B, and C
+        A = scanner.nextLong();
+        B = scanner.nextLong();
+        C = scanner.nextLong();
 
-        A = scanner.nextInt();
-        C = scanner.next().charAt(0);
-        B = scanner.nextInt();
-
-
-        if (C == '<') {
-            if (A < B) {
-                System.out.println("Right");
+        // Check if A is the largest
+        if (A >= B && A >= C) {
+            if (B > C) {
+                System.out.println(C + " " + A);
             } else {
-                System.out.println("Wrong");
+                System.out.println(B + " " + A);
             }
-        } else if (C == '>') {
+        }
+
+        // Check if B is the largest
+        else if (B >= A && B >= C) {
+            if (A > C) {
+                System.out.println(C + " " + B);
+            } else {
+                System.out.println(A + " " + B);
+            }
+        }
+
+        // Check if C is the largest
+        else if (C >= A) {
             if (A > B) {
-                System.out.println("Right");
+                System.out.println(B + " " + C);
             } else {
-                System.out.println("Wrong");
-            }
-        } else if (C == '=') {
-            if (A == B) {
-                System.out.println("Right");
-            } else {
-                System.out.println("Wrong");
+                System.out.println(A + " " + C);
             }
         }
 
