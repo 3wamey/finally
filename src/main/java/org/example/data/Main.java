@@ -7,40 +7,16 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
 
-        long A, B, C;
+        int A = scanner.nextInt();
+        int B = scanner.nextInt();
+
+        double result = (double) A / B;
 
 
-        A = scanner.nextLong();
-        B = scanner.nextLong();
-        C = scanner.nextLong();
+        System.out.println("floor " + A + " / " + B + " = " + (int) Math.floor(result));
 
+        System.out.println("ceil " + A + " / " + B + " = " + (int) Math.ceil(result));
 
-        if (A >= B && A >= C) {
-            if (B > C) {
-                System.out.println(C + " " + A);
-            } else {
-                System.out.println(B + " " + A);
-            }
-        }
-
-
-        else if (B >= A && B >= C) {
-            if (A > C) {
-                System.out.println(C + " " + B);
-            } else {
-                System.out.println(A + " " + B);
-            }
-        }
-
-
-        else if (C >= A) {
-            if (A > B) {
-                System.out.println(B + " " + C);
-            } else {
-                System.out.println(A + " " + C);
-            }
-        }
-
-
+        System.out.println("round " + A + " / " + B + " = " + Math.round(result));
         }
     }
